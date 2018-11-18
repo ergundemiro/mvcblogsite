@@ -1,0 +1,82 @@
+﻿@model IEnumerable<MvcBlog.Models.Makale>
+
+@{
+    ViewBag.Title = "KategoriMakale";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using GridMvc.Html
+
+<div class="col-md-8">
+
+    @Html.Grid(Model).Columns(columns =>
+                            {
+                                columns.Add(m => m.Kategori.KategoriAdi).Titled("Kategori Adı").SetWidth(110).Sortable(true).Filterable(true);
+                                columns.Add(m => m.Baslik).Sortable(true).Filterable(true);
+                                columns.Add(m => m.Tarih).Sortable(true).Filterable(true);
+                                columns.Add(m => m.Okunma).Sortable(true).Filterable(true);
+                            }).WithPaging(2)
+
+
+</div>
+
+
+
+
+
+@*<div class="col-md-8">
+        <table class="table col-md-8">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Kategori.KategoriAdi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Uye.KullaniciAdi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Baslik)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Icerik)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fotograf)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tarih)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Okunma)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Kategori.KategoriAdi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Uye.KullaniciAdi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Baslik)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Icerik)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fotograf)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tarih)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Okunma)
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+    </div>*@

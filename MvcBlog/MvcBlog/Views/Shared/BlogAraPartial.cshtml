@@ -1,0 +1,18 @@
+﻿
+
+
+<div class="card my-4">
+    <h5 class="card-header">Blog Search</h5>
+    @using (Html.BeginForm("BlogAra", "Home", FormMethod.Post))
+    {
+        <div class="card-body">
+            <div class="input-group">
+                <input id="Ara" name="Ara" type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                    <button class="btn btn-secondary" value="Ara" type="submit">Go!</button>
+                </span>
+            </div>
+        </div>
+    
+    }
+</div>
